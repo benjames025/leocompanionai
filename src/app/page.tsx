@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { DottedSurface } from "@/components/ui/dotted-surface"
 import { HoverFooter } from "@/components/ui/hover-footer"
+import { WaitlistForm } from "@/components/ui/waitlist-hero"
 import {
   Brain,
   Shield,
@@ -46,10 +47,10 @@ function Nav() {
 
         {/* CTA */}
         <a
-          href="https://apps.apple.com/app/id6760952532"
+          href="#waitlist"
           className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-zinc-950 transition hover:bg-zinc-200 md:inline-flex"
         >
-          Download
+          Join Waitlist
         </a>
 
         {/* Mobile toggle */}
@@ -66,8 +67,8 @@ function Nav() {
             <a href="#agents" onClick={() => setOpen(false)} className="text-sm text-zinc-400 transition hover:text-white">AI Agents</a>
             <a href="#security" onClick={() => setOpen(false)} className="text-sm text-zinc-400 transition hover:text-white">Security</a>
             <a href="#pricing" onClick={() => setOpen(false)} className="text-sm text-zinc-400 transition hover:text-white">Pricing</a>
-            <a href="https://apps.apple.com/app/id6760952532" className="mt-2 rounded-full bg-white px-5 py-2 text-center text-sm font-medium text-zinc-950">
-              Download
+            <a href="#waitlist" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-white px-5 py-2 text-center text-sm font-medium text-zinc-950">
+              Join Waitlist
             </a>
           </div>
         </div>
@@ -95,7 +96,7 @@ function StatCard({ label, value, color }: { label: string; value: string; color
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-20">
+    <section id="waitlist" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-20">
       {/* Glow orbs */}
       <div className="pointer-events-none absolute inset-0">
         <div className="animate-glow-pulse absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-sky-600/20 blur-[128px]" />
@@ -108,7 +109,7 @@ function Hero() {
         <div className="text-center lg:text-left">
           <div className="animate-slide-up mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-700/50 bg-zinc-900/80 px-4 py-1.5 text-sm text-zinc-400">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Now available on the App Store
+            Coming Soon to iOS
           </div>
 
           <h1 className="animate-slide-up delay-100 text-5xl font-bold leading-tight tracking-tight md:text-7xl">
@@ -125,21 +126,8 @@ function Hero() {
             AI-powered assistant.
           </p>
 
-          <div className="animate-slide-up delay-300 mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start sm:justify-center">
-            <a
-              href="https://apps.apple.com/app/id6760952532"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-zinc-950 shadow-lg shadow-white/10 transition hover:bg-zinc-200"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" /></svg>
-              Download for iOS
-            </a>
-            <a
-              href="#features"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-8 py-3.5 text-base font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white"
-            >
-              Learn more
-              <ChevronDown size={16} />
-            </a>
+          <div className="animate-slide-up delay-300 mt-10 w-full lg:max-w-none max-w-md mx-auto lg:mx-0">
+            <WaitlistForm />
           </div>
         </div>
 
@@ -485,8 +473,8 @@ function Pricing() {
               <PricingItem text="Mood correlation insights" active />
               <PricingItem text="Cloud sync across devices" active />
             </ul>
-            <a href="https://apps.apple.com/app/id6760952532" className="mt-8 block rounded-full bg-sky-500 py-3 text-center text-sm font-semibold text-white transition hover:bg-sky-400">
-              Start Free Trial
+            <a href="#waitlist" className="mt-8 block rounded-full bg-sky-500 py-3 text-center text-sm font-semibold text-white transition hover:bg-sky-400">
+              Join Waitlist
             </a>
           </div>
         </div>
@@ -529,7 +517,7 @@ export default function Home() {
             { label: "Pricing", href: "#pricing" },
           ]}
           helpfulLinks={[
-            { label: "App Store", href: "https://apps.apple.com/app/id6760952532" },
+            { label: "Join Waitlist", href: "#waitlist" },
             { label: "Support", href: "mailto:support@leocompanionai.com" },
             { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms of Service", href: "/terms" },
