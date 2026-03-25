@@ -138,7 +138,7 @@ function Hero() {
               <div className="flex items-center justify-center bg-gradient-to-b from-sky-950 to-zinc-950 px-6 pb-8 pt-14">
                 <div className="w-full space-y-4">
                   <div className="text-center text-sm text-zinc-500">Good morning</div>
-                  <div className="text-center text-2xl font-bold">Hey, Ben</div>
+                  <div className="text-center text-2xl font-bold">Welcome Back</div>
                   <div className="mt-6 grid grid-cols-2 gap-3">
                     <StatCard label="Spent" value="$24" color="sky" />
                     <StatCard label="Calories" value="1,840" color="emerald" />
